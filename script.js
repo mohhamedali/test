@@ -1,24 +1,23 @@
-function draw() {
-  const canvas = document.getElementById("canvas");
-  if (canvas.getContext) {
-    const ctx = canvas.getContext("2d");
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the arch element
+    var arch = document.getElementById("arch-svg");
 
-    // Filled triangle
-    ctx.beginPath();
-    ctx.moveTo(25, 25);
-    ctx.lineTo(105, 25);
-    ctx.lineTo(25, 105);
-    ctx.fill();
+    // Function to change the arch color on click
+    function changeArchColor() {
+        var randomColor = getRandomColor();
+        arch.style.stroke = randomColor;
+    }
 
-    // Stroked triangle
-    ctx.beginPath();
-    ctx.moveTo(125, 125);
-    ctx.lineTo(125, 45);
-    ctx.lineTo(45, 125);
-    ctx.closePath();
-    ctx.stroke();
-  }
-}
+    // Add click event listener to the arch
+    arch.addEventListener("click", changeArchColor);
 
-draw();
-
+    // Function to generate a random color
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+});
