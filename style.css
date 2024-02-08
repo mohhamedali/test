@@ -1,1 +1,18 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.arch-container {
+    width: 200px;
+}
+
+.arch {
+    fill: transparent;
+    stroke: black;
+    stroke-width: 2;
+}
 
