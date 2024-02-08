@@ -1,31 +1,23 @@
-function drawcurve1()
-{
-  const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-//let cw = canvas.width = 536;
-//let ch = canvas.height = 100;
-   
-ctx.beginPath();
-ctx.moveTo(0,28)
-ctx.bezierCurveTo(0,28,31,7,70,8);
-ctx.bezierCurveTo(109,9,313,99,425,90);
-ctx.bezierCurveTo(516,82.5,536,55,536,55);
-ctx.stroke();
-}
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the arch element
+    var arch = document.getElementById("arch-svg");
 
-function draw() {
-  const canvas = document.getElementById("canvas");
-  if (canvas.getContext) {
-    const ctx = canvas.getContext("2d");
+    // Function to change the arch color on click
+    function changeArchColor() {
+        var randomColor = getRandomColor();
+        arch.style.stroke = randomColor;
+    }
 
-    ctx.fillRect(25, 25, 100, 100);
-    ctx.clearRect(45, 45, 60, 60);
-    ctx.strokeRect(50, 50, 50, 50);
+    // Add click event listener to the arch
+    arch.addEventListener("click", changeArchColor);
 
-
-    
-  }
-}
-// starting point
-draw();
-drawcurve1();
+    // Function to generate a random color
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+});
