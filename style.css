@@ -1,18 +1,8 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background-color: linen;
 }
 
-.arch-container {
-    width: 200px;
-}
-
-.arch {
-    fill: transparent;
-    stroke: black;
-    stroke-width: 2;
-}
-
+canvas 
+{
+  border:1px solid #000000;
+       }
